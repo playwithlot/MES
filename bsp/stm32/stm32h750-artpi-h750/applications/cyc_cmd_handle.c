@@ -2263,7 +2263,7 @@ void cmd_pop_shelf_handle(void *args)
 
 	LOG_I("track %d pop-out sample \n", track);
 	src_pos = get_smp_cache_pos(&des_smp);
-
+	
 	do
 	{	
 		if(des_tr_type == DEST_TRACK_TYPES_EMER)
@@ -2278,19 +2278,19 @@ void cmd_pop_shelf_handle(void *args)
 		{
 			track = CAN_ADDR_RECOVERY_TRACK;
 		}
-		else if(src_pos == CACHE_POS_MIN_CAR)
+		else if(des_tr_type == DEST_TRACK_TYPES_UNKNOWN)
 		{
-			//act_mincar_send_smp(pop_pos, pop_slot);
-			//err = 0;
+			src_pos = CACHE_POS_MIN_CAR;
 			LOG_I("pop shelf from mini car\n"); 
 			
-			//break;	
+
 		}
 		else
 		{
 			LOG_E("err track types!!!\n");
 			break;
 		}
+		
 		
 		if(cmd_pop_pos == 0) //pop to cache store
 		{

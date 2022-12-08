@@ -43,10 +43,11 @@
 
 
 
-
+#define DEST_TRACK_TYPES_UNKNOWN (0x00)
 #define DEST_TRACK_TYPES_EMER    (0x01)
 #define DEST_TRACK_TYPES_NORMAL  (0x02)
 #define DEST_TRACK_TYPES_RECYC   (0x03)
+
 
 #define DEST_TRACK_ADD_POS        (0x01)
 #define DEST_TRACK_ADD_CACHE_POS  (0x02)
